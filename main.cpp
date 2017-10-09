@@ -7,18 +7,9 @@ using namespace std;
 int main()
 {
 int opcion,numConfirmacion;
-string nombre , nacionalidad,n1,p1,p2;
+string nombre , nacionalidad;
 ifstream pasajeros;
-pasajeros.open("Pasajeros.txt");
-while(pasajeros>>numConfirmacion>>nacionalidad>>n1>>p1>>p2)
-{
-    if (numConfirmacion==189)
-    {
-       cout<<nacionalidad<<"\n";
-    }
 
-}
-pasajeros.close();
  do {
   cout << endl
 << " 1 - Consulta de todos los vuelos.\n"
