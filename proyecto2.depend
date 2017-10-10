@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1507680944 source:c:\users\jorge\documents\github\proyecto2\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"Clases.h"
+
+1507681004 c:\users\jorge\documents\github\proyecto2\clases.h
+	<iostream>
+

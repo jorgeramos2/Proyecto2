@@ -6,9 +6,7 @@ using namespace std;
 
 int main()
 {
-int opcion,numConfirmacion;
-string nombre , nacionalidad;
-ifstream pasajeros;
+int opcion;
 
  do {
   cout << endl
