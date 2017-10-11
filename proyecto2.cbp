@@ -32,6 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Aeropuerto.h" />
+		<Unit filename="Hora.h" />
+		<Unit filename="Pasajero.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
