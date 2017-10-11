@@ -53,7 +53,7 @@ void aeropuerto::setNombre(string nombre)
 {
     this->nombre=nombre;
 }
-void aeropuerto::setClaveAeropuerto(int claveAeropuerto)
+void aeropuerto::setClaveAeropueto(int claveAeropuerto)
 {
   this->claveAeropuerto=claveAeropuerto;
 }

@@ -1,10 +1,31 @@
 # depslib dependency file v1.0
-1507680944 source:c:\users\jorge\documents\github\proyecto2\main.cpp
+1507769436 source:c:\users\jorge\documents\github\proyecto2\main.cpp
 	<iostream>
 	<fstream>
 	<string>
-	"Clases.h"
+	"Hora.h"
+	"Aeropuerto.h"
+	"Vuelo.h"
+	"Pasajero.h"
 
 1507681004 c:\users\jorge\documents\github\proyecto2\clases.h
 	<iostream>
+
+1507766676 c:\users\jorge\documents\github\proyecto2\hora.h
+	<iostream>
+
+1507769336 c:\users\jorge\documents\github\proyecto2\aeropuerto.h
+	<iostream>
+	<fstream>
+	<string>
+
+1507766004 c:\users\jorge\documents\github\proyecto2\vuelo.h
+	"Hora.h"
+	"Aeropuerto.h"
+	"Pasajero.h"
+
+1507767305 c:\users\jorge\documents\github\proyecto2\pasajero.h
+	<iostream>
+	<fstream>
+	<string>
 
