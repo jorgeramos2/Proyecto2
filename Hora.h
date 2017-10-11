@@ -1,5 +1,6 @@
-#ifndef CLASES_H_INCLUDED
-#define CLASES_H_INCLUDED
+#ifndef HORA_H_INCLUDED
+#define HORA_H_INCLUDED
+
 #include <iostream>
 using namespace std;
 
@@ -32,4 +33,8 @@ int hora::getMinutos()
 {
     return m;
 }
-#endif // CLASES_H_INCLUDED
+
+
+
+
+#endif // HORA_H_INCLUDED

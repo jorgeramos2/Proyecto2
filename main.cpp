@@ -1,7 +1,9 @@
 #include <iostream>
 #include<fstream>
 #include <string>
-#include"Clases.h"
+#include"Hora.h"
+#include"Pasajero.h"
+#include"Aeropuerto.h"
 using namespace std;
 
 int main()
