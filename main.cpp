@@ -33,7 +33,41 @@ int claveVuelo,claveAeropuerto;
     archEnt2.open("Pasajeros.txt");
 
     //obtener lineas de primer archivo
+    
+    
+    string ciudad;
+    string nombre;
+    int cclaveAeropuerto;
+    int cont2=0;
+    
+    
+    while(archEnt1 >> ciudad >> nombre >> cclaveAeropuerto){
+        
+        ArrAeropuerto[cont2].setCiudad(ciudad);
+        ArrAeropuerto[cont2].setNombre(nombre);
+        ArrAeropuerto[cont2].setClaveAeropueto(cclaveAeropuerto);
+        
+        cont2++;
+    }
+    
+    string nnombre;
+    string nacionalidad;
+    int numConfirmacion;
+    
+    do {
+        archEnt2 >> numConfirmacion >> nacionalidad;
+        getline(cin, nnombre);
+        
+        cout << numConfirmacion << endl;
+        cout << nacionalidad << endl;
+        cout << nnombre << endl;
+        
+    } while (!archEnt2.eof());
+    
+    
 
+    
+    
 
     bool che= true;
 
@@ -182,6 +216,11 @@ break;
 }
 
 }while (opcion !=7);
+    
+    
+    archEnt2.close();
+    archEnt1.close();
+    
 return 0;
  }
 
