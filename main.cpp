@@ -20,9 +20,9 @@ int main()
     Vuelo ArrVuelos [MAXv];
     hora ArrHora[MAXv];
 ////Declaracion de variables
-int claveVuelo,claveAeropuerto,cclaveAeropuerto,Length1 = 0 ,cs = 0, cont=1,i=0,j=0,cont2=0,h,m,numAsientos;
+int claveVuelo,claveAeropuerto,cclaveAeropuerto,Length1 = 0 ,cs = 0, cont=1,i=0,j,k=0,cont2=0,h,m,numAsientos,numConfirmacion, cont3=0;
 string linea,destino,ciudad,nombre,nnombre,nacionalidad;
-
+bool che= true;
 
 
 
@@ -50,9 +50,9 @@ string linea,destino,ciudad,nombre,nnombre,nacionalidad;
 
         cont2++;
     }
+archEnt1.close();
 
 
-    int numConfirmacion, cont3=0;
 
     do {
         archEnt2 >> numConfirmacion >> nacionalidad;
@@ -62,11 +62,11 @@ string linea,destino,ciudad,nombre,nnombre,nacionalidad;
         ArrPasajeros[cont3].setNacionalidad(nacionalidad);
         ArrPasajeros[cont3].setNombre(nnombre);
     } while (!archEnt2.eof());
+archEnt2.close();
 
 
 
 
-    bool che= true;
 
 
     //cuantos vuelos se van a meter y cuales son
@@ -92,19 +92,25 @@ string linea,destino,ciudad,nombre,nnombre,nacionalidad;
         cout << "vuelo no." << cs+1 << endl << "Teclee la hora del vuelo" << endl;
 
         cin >> h;
-
-
-        cout << "Teclee los minutos en los que el vuelo sale" << endl;
+        if(h>=0 && h<=23)
+        {
+          cout << "Teclee los minutos en los que el vuelo sale" << endl;
 
         cin >> m;
-
-        cout << "Ingrese el numero de asientos" << endl;
+        if(m>=0 && m<=59)
+        {
+         cout << "Ingrese el numero de asientos" << endl;
 
         cin >> numAsientos;
         cout<<"Teclee clave de vuelo"<<endl;
         cin>>claveVuelo;
         cout<<"Teclee clave aeropuerto"<<endl;
         cin>>claveAeropuerto;
+        if(claveAeropuerto==ArrAeropuerto[0].getClaveAeropuerto()||claveAeropuerto==ArrAeropuerto[1].getClaveAeropuerto()||
+           claveAeropuerto==ArrAeropuerto[2].getClaveAeropuerto()||claveAeropuerto==ArrAeropuerto[3].getClaveAeropuerto()||
+           claveAeropuerto==ArrAeropuerto[4].getClaveAeropuerto()||claveAeropuerto==ArrAeropuerto[5].getClaveAeropuerto())
+        {
+
         cout<<"Teclee linea"<<endl;
         cin>>linea;
         cout<<"Teclee destino"<<endl;
@@ -117,6 +123,22 @@ string linea,destino,ciudad,nombre,nnombre,nacionalidad;
         ArrVuelos[cs].setLinea(linea);
         ArrHora[cs].setHora(h);
         ArrHora[cs].setMinutos(m);
+        }
+        else{
+            cout<<"Clave de aeropuerto no existe"<<endl;
+            return 0;
+
+        }
+        }
+        else{
+            cout<<"Minuto no valido"<<endl;
+            return 0;
+        }
+        }
+        else{
+            cout<<"Hora no valida"<<endl;
+            return 0;
+        }
 
 
         cs++;
@@ -209,11 +231,10 @@ break;
 case 5:
 cout<<"Ingrese el nombre del aeropuerto"<<endl;
 cin>>nombre;
- while(j!=Length1)
-    {
-////// Verificar que exista EL NOMBRE
-    if(nombre==ArrAeropuerto[j].getNombre())
-    {
+for(j=0;j<=cont2;j++)
+{
+ if(ArrAeropuerto[j].getNombre()==nombre)
+{
         cout<<"Vuelo"<<endl;
         cout<<"La clave de vuelo es : "<<ArrVuelos[j].getclaveVuelo()<<endl;
         cout<<"El destino del vuelo es : "<<ArrVuelos[j].getdestino()<<endl;
@@ -221,12 +242,14 @@ cin>>nombre;
         cout<<"El numero de asientos disponibles es : "<<ArrVuelos[j].getnumAsientos()<<endl;
         cout<<"La hora de salida del vuelo es :"<<ArrHora[j].getHora()<< ":"<<ArrHora[j].getMinutos()<<endl;
         cout<<" La clave del Aeropuerto es : "<<ArrVuelos[j].getclaveAeropuerto()<<endl<<endl<<endl;
-        j++;
-    }
+        k++;
 
-    else{
-    j++;
-    }
+}
+
+}
+if(k==0)
+{
+    cout<<"Ese aeropuerto no existe o no hay vuelos dados de alta en este aeropuerto"<<endl;
 }
 
 break;
@@ -246,8 +269,7 @@ break;
 }while (opcion !=7);
 
 
-    archEnt2.close();
-    archEnt1.close();
+
 
 return 0;
  }
