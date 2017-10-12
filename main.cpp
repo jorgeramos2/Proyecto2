@@ -72,7 +72,7 @@ int claveVuelo,claveAeropuerto;
 
     //cuantos vuelos se van a meter y cuales son
     while(che==true){
-        cout << "cuantos quiere generar" << endl;
+        cout << "Cuantos vuelos quieres generar" << endl;
         cin >> Length1;
         if (Length1 > 10){
             cout << "solo se permiten 10 vuelos" << endl;
@@ -91,7 +91,7 @@ int claveVuelo,claveAeropuerto;
 
     do{
 
-        hora hh;
+
         cout << "vuelo no." << cs+1 << endl << "Teclee la hora del vuelo" << endl;
 
         cin >> h;
@@ -112,7 +112,7 @@ int claveVuelo,claveAeropuerto;
         cin>>linea;
         cout<<"Teclee destino"<<endl;
         cin>>destino;
-        hora h2;
+        cout<<endl<<endl<<endl;
         ArrVuelos[cs].setnumAsientos(numAsientos);
         ArrVuelos[cs].setclaveVuelo(claveVuelo);
         ArrVuelos[cs].setclaveAeropuerto(claveAeropuerto);
@@ -141,7 +141,7 @@ cs=0;
         << " 7 - Salir \n"
         << " Ingrese su opcion : ";
         cin >> opcion;
-
+        cout<<endl<<endl;
 switch (opcion)
 {
 case 1:
@@ -150,7 +150,7 @@ case 1:
     cout<<"Los vuelos registrados son : "<<endl;
     while(cs != Length1)
 {
-     hora h2;
+
     cout<<"Vuelo "<<cont<<endl;
     cout<<"La clave de vuelo es : "<<ArrVuelos[cs].getclaveVuelo()<<endl;
     cout<<"La hora de salida del vuelo es :"<<ArrHora[cs].getHora()<< ":"<<ArrHora[cs].getMinutos()<<endl;
@@ -176,6 +176,7 @@ case 3:
                 cin>>h;
                 cout << "Dame los minutos en los que sale el vuelo" << endl;
                 cin>>m;
+                cout<<endl<<endl;
                 if(h>=0 && h<=23 && m>=0 && m<=59)
                 {
                    while(i!=Length1)
