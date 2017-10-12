@@ -20,7 +20,7 @@ int main()
     Vuelo ArrVuelos [MAXv];
     hora ArrHora[MAXv];
 ////Declaracion de variables
-int claveVuelo,claveAeropuerto,cclaveAeropuerto,Length1 = 0 ,cs = 0, cont=1,i=0,cont2=0;
+int claveVuelo,claveAeropuerto,cclaveAeropuerto,Length1 = 0 ,cs = 0, cont=1,i=0,j=0,cont2=0,h,m,numAsientos;
 string linea,destino,ciudad,nombre,nnombre,nacionalidad;
 
 
@@ -42,11 +42,11 @@ string linea,destino,ciudad,nombre,nnombre,nacionalidad;
 
 
 
-    while(archEnt1 >> ciudad >> nombre >> cclaveAeropuerto){
+    while(archEnt1 >> ciudad >> nombre >> claveAeropuerto){
 
         ArrAeropuerto[cont2].setCiudad(ciudad);
         ArrAeropuerto[cont2].setNombre(nombre);
-        ArrAeropuerto[cont2].setClaveAeropueto(cclaveAeropuerto);
+        ArrAeropuerto[cont2].setClaveAeropueto(claveAeropuerto);
 
         cont2++;
     }
@@ -68,6 +68,7 @@ string linea,destino,ciudad,nombre,nnombre,nacionalidad;
 
     bool che= true;
 
+
     //cuantos vuelos se van a meter y cuales son
     while(che==true){
         cout << "Cuantos vuelos quieres generar" << endl;
@@ -84,8 +85,6 @@ string linea,destino,ciudad,nombre,nnombre,nacionalidad;
 
 
 
-
-    int h, m, numAsientos;
 
     do{
 
@@ -165,6 +164,7 @@ case 1:
 case 2:
 
                 cout << "Dame el numero de confirmacion" << endl;
+
                 cout << "Dame la clave del vuelo" << endl;
 
 
@@ -205,7 +205,29 @@ case 3:
 case 4:
 
 break;
+
 case 5:
+cout<<"Ingrese el nombre del aeropuerto"<<endl;
+cin>>nombre;
+ while(j!=Length1)
+    {
+////// Verificar que exista EL NOMBRE
+    if(nombre==ArrAeropuerto[j].getNombre())
+    {
+        cout<<"Vuelo"<<endl;
+        cout<<"La clave de vuelo es : "<<ArrVuelos[j].getclaveVuelo()<<endl;
+        cout<<"El destino del vuelo es : "<<ArrVuelos[j].getdestino()<<endl;
+        cout<<"La linea del vuelo es : "<<ArrVuelos[j].getlinea()<<endl;
+        cout<<"El numero de asientos disponibles es : "<<ArrVuelos[j].getnumAsientos()<<endl;
+        cout<<"La hora de salida del vuelo es :"<<ArrHora[j].getHora()<< ":"<<ArrHora[j].getMinutos()<<endl;
+        cout<<" La clave del Aeropuerto es : "<<ArrVuelos[j].getclaveAeropuerto()<<endl<<endl<<endl;
+        j++;
+    }
+
+    else{
+    j++;
+    }
+}
 
 break;
 case 6:
