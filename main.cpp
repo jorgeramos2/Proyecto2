@@ -35,6 +35,8 @@ int claveVuelo,claveAeropuerto;
     //obtener lineas de primer archivo
     
     
+    
+    
     string ciudad;
     string nombre;
     int cclaveAeropuerto;
@@ -52,20 +54,17 @@ int claveVuelo,claveAeropuerto;
     
     string nnombre;
     string nacionalidad;
-    int numConfirmacion;
+    int numConfirmacion, cont3=0;
     
     do {
         archEnt2 >> numConfirmacion >> nacionalidad;
-        getline(cin, nnombre);
+        getline(archEnt2, nnombre);
         
-        cout << numConfirmacion << endl;
-        cout << nacionalidad << endl;
-        cout << nnombre << endl;
-        
+        ArrPasajeros[cont3].setNumConfirmacion(numConfirmacion);
+        ArrPasajeros[cont3].setNacionalidad(nacionalidad);
+        ArrPasajeros[cont3].setNombre(nnombre);
     } while (!archEnt2.eof());
     
-    
-
     
     
 
