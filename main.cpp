@@ -35,12 +35,6 @@ bool che= true;
     ifstream archEnt2;
     archEnt2.open("Pasajeros.txt");
 
-    //obtener lineas de primer archivo
-
-
-
-
-
 
     while(archEnt1 >> ciudad >> nombre >> claveAeropuerto){
 
@@ -84,7 +78,7 @@ archEnt2.close();
     }
 
 
-
+////// Ingresar datos de la clase vuelo
 
     do{
 
@@ -92,11 +86,13 @@ archEnt2.close();
         cout << "vuelo no." << cs+1 << endl << "Teclee la hora del vuelo" << endl;
 
         cin >> h;
+///// Verificar que la hora sea valida
         if(h>=0 && h<=23)
         {
           cout << "Teclee los minutos en los que el vuelo sale" << endl;
 
         cin >> m;
+/////// Verificar que los minutos sean validos
         if(m>=0 && m<=59)
         {
          cout << "Ingrese el numero de asientos" << endl;
@@ -106,6 +102,7 @@ archEnt2.close();
         cin>>claveVuelo;
         cout<<"Teclee clave aeropuerto"<<endl;
         cin>>claveAeropuerto;
+/////// Verificar que la claveAeropuerto exista
         if(claveAeropuerto==ArrAeropuerto[0].getClaveAeropuerto()||claveAeropuerto==ArrAeropuerto[1].getClaveAeropuerto()||
            claveAeropuerto==ArrAeropuerto[2].getClaveAeropuerto()||claveAeropuerto==ArrAeropuerto[3].getClaveAeropuerto()||
            claveAeropuerto==ArrAeropuerto[4].getClaveAeropuerto()||claveAeropuerto==ArrAeropuerto[5].getClaveAeropuerto())
@@ -116,6 +113,7 @@ archEnt2.close();
         cout<<"Teclee destino"<<endl;
         cin>>destino;
         cout<<endl<<endl<<endl;
+/////// Guardar datos en arreglos y enviarlos a sus correspondientes clases.
         ArrVuelos[cs].setnumAsientos(numAsientos);
         ArrVuelos[cs].setclaveVuelo(claveVuelo);
         ArrVuelos[cs].setclaveAeropuerto(claveAeropuerto);
