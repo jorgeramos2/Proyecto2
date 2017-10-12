@@ -90,6 +90,13 @@ string Vuelo:: getlinea(){
 string Vuelo :: getdestino(){
     return destino;
 }
+int Vuelo ::getclaveAeropuerto(){
+    return claveAeropuerto;
+}
+int Vuelo ::getnumAsientos()
+{
+    return numAsientos;
+}
 //int getlistaPasajeros[]; //aqui me aparece un error, no se como poner el array
 
 //mÈtodos de modificacion
@@ -114,6 +121,7 @@ void Vuelo::setclaveAeropuerto(int claveAeropuerto)
 {
     this->claveAeropuerto=claveAeropuerto;
 }
+
 void setlistaPasajero (int listapasajero [MAX]);
 
 

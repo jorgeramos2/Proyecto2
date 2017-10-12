@@ -19,7 +19,7 @@ int main()
 int claveVuelo,claveAeropuerto;
     string linea,destino;
     string Linea1, Linea2, Final1, Final2; //string linea guarda lo que se recibe del archivo, final guarda lo que se imprime en la pantalla final
-    int C1 = 0, C2=0, Length1 = 0, Length2 = 0, cs = 0;
+    int  Length1 = 0 ,cs = 0, cont=1;
 
 
     //abrir archivos
@@ -91,17 +91,19 @@ int claveVuelo,claveAeropuerto;
 
         //Vuelo::Vuelo(hora hh, int numAsientos, int clabeVuelo, int claveAeropuerto, string linea, string destino, int listaPasajero[MAX])
 
-        cout <<  ArrVuelos[cs].getclaveVuelo();
-
-        cout << ArrVuelos[cs].getdestino();
-        cout << ArrVuelos[cs].getlinea();
+        cout <<  ArrVuelos[cs].getclaveVuelo()<<endl;
+        cout<< h2.getHora()<<endl;
+        cout<<h2.getMinutos()<<endl;
+        cout << ArrVuelos[cs].getdestino()<<endl;
+        cout << ArrVuelos[cs].getlinea()<<endl;
+        cout<<ArrVuelos[cs].getnumAsientos()<<endl;
+        cout<<ArrVuelos[cs].getclaveAeropuerto()<<endl;
 
         cs++;
     }while (cs != Length1);
 
-    cs=0;
+cs=0;
 
-    int ca = 0;
 
     int opcion;
 
@@ -122,6 +124,20 @@ switch (opcion)
 case 1:
 
 
+    cout<<"Los vuelos registrados son : "<<endl;
+    while(cs != Length1)
+{
+     hora h2;
+    cout<<"Vuelo "<<cont<<endl;
+    cout<<"La clave de vuelo es : "<<ArrVuelos[cs].getclaveVuelo()<<endl;
+    cout<<"La hora de salida del vuelo es :"<<h2.getHora()<< ":"<<h2.getMinutos()<<endl;
+    cout<<"El destino del vuelo es : "<<ArrVuelos[cs].getdestino()<<endl;
+    cout<<"La linea del vuelo es : "<<ArrVuelos[cs].getlinea()<<endl;
+    cout<<"El numero de asientos disponibles es : "<<ArrVuelos[cs].getnumAsientos()<<endl;
+    cout<<" La clave del Aeropuerto es : "<<ArrVuelos[cs].getclaveAeropuerto()<<endl;
+    cs++;
+    cont++;
+}
 
 
                 break;

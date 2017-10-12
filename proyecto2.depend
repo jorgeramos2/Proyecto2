@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1507777518 source:c:\users\jorge\documents\github\proyecto2\main.cpp
+1507780508 source:c:\users\jorge\documents\github\proyecto2\main.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -19,7 +19,7 @@
 	<fstream>
 	<string>
 
-1507777778 c:\users\jorge\documents\github\proyecto2\vuelo.h
+1507780597 c:\users\jorge\documents\github\proyecto2\vuelo.h
 	"Hora.h"
 	"Aeropuerto.h"
 	"Pasajero.h"
