@@ -231,6 +231,7 @@ break;
 case 5:
 cout<<"Ingrese el nombre del aeropuerto"<<endl;
 cin>>nombre;
+k=0;
 for(j=0;j<=cont2;j++)
 {
  if(ArrAeropuerto[j].getNombre()==nombre)
@@ -245,12 +246,12 @@ for(j=0;j<=cont2;j++)
         k++;
 
 }
-
-}
 if(k==0)
 {
-    cout<<"Ese aeropuerto no existe o no hay vuelos dados de alta en este aeropuerto"<<endl;
+    cout<<"No existe ese aeropuerto o no hay vuelos en ese aeropuerto registrados"<<endl;
 }
+}
+
 
 break;
 case 6:
