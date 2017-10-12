@@ -223,7 +223,9 @@ case 3:
                 {
                     cout<<"Ingresaste una hora incorrecta"<<endl;
                 }
+                i=0;
                 break;
+
 case 4:
 
 break;
@@ -232,27 +234,24 @@ case 5:
 cout<<"Ingrese el nombre del aeropuerto"<<endl;
 cin>>nombre;
 k=0;
+
 for(j=0;j<=cont2;j++)
 {
  if(ArrAeropuerto[j].getNombre()==nombre)
 {
         cout<<"Vuelo"<<endl;
-        cout<<"La clave de vuelo es : "<<ArrVuelos[j].getclaveVuelo()<<endl;
-        cout<<"El destino del vuelo es : "<<ArrVuelos[j].getdestino()<<endl;
-        cout<<"La linea del vuelo es : "<<ArrVuelos[j].getlinea()<<endl;
-        cout<<"El numero de asientos disponibles es : "<<ArrVuelos[j].getnumAsientos()<<endl;
-        cout<<"La hora de salida del vuelo es :"<<ArrHora[j].getHora()<< ":"<<ArrHora[j].getMinutos()<<endl;
-        cout<<" La clave del Aeropuerto es : "<<ArrVuelos[j].getclaveAeropuerto()<<endl<<endl<<endl;
+        cout<<"La clave de vuelo es : "<<ArrVuelos[k].getclaveVuelo()<<endl;
+        cout<<"El destino del vuelo es : "<<ArrVuelos[k].getdestino()<<endl;
+        cout<<"La linea del vuelo es : "<<ArrVuelos[k].getlinea()<<endl;
+        cout<<"El numero de asientos disponibles es : "<<ArrVuelos[k].getnumAsientos()<<endl;
+        cout<<"La hora de salida del vuelo es :"<<ArrHora[k].getHora()<< ":"<<ArrHora[j].getMinutos()<<endl;
+        cout<<" La clave del Aeropuerto es : "<<ArrVuelos[k].getclaveAeropuerto()<<endl<<endl<<endl;
         k++;
 
 }
-if(k==0)
-{
-    cout<<"No existe ese aeropuerto o no hay vuelos en ese aeropuerto registrados"<<endl;
-}
-}
 
-
+}
+j=0;
 break;
 case 6:
 
