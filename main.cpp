@@ -7,20 +7,23 @@
 #include "Pasajero.h"
 
 using namespace std;
+//// Contantes para los arreglos de objetos
 const int MAXa = 6;
 const int MAXp = 15;
 const int MAXv = 10;
 
 int main()
 {
+//// Declaracion de arreglos de objetos
     aeropuerto ArrAeropuerto [MAXa];
     pasajero ArrPasajeros [MAXp];
     Vuelo ArrVuelos [MAXv];
     hora ArrHora[MAXv];
-int claveVuelo,claveAeropuerto;
-    string linea,destino;
-    string Linea1, Linea2, Final1, Final2; //string linea guarda lo que se recibe del archivo, final guarda lo que se imprime en la pantalla final
-    int  Length1 = 0 ,cs = 0, cont=1,i=0;
+////Declaracion de variables
+int claveVuelo,claveAeropuerto,cclaveAeropuerto,Length1 = 0 ,cs = 0, cont=1,i=0,cont2=0;
+string linea,destino,ciudad,nombre,nnombre,nacionalidad;
+
+
 
 
     //abrir archivos
@@ -37,10 +40,6 @@ int claveVuelo,claveAeropuerto;
 
 
 
-    string ciudad;
-    string nombre;
-    int cclaveAeropuerto;
-    int cont2=0;
 
 
     while(archEnt1 >> ciudad >> nombre >> cclaveAeropuerto){
@@ -52,8 +51,7 @@ int claveVuelo,claveAeropuerto;
         cont2++;
     }
 
-    string nnombre;
-    string nacionalidad;
+
     int numConfirmacion, cont3=0;
 
     do {
@@ -127,7 +125,7 @@ int claveVuelo,claveAeropuerto;
 
 cs=0;
 
-
+/////Menu
     int opcion;
 
     do {
@@ -145,7 +143,7 @@ cs=0;
 switch (opcion)
 {
 case 1:
-
+//// Muestra los vuelos registrados
 
     cout<<"Los vuelos registrados son : "<<endl;
     while(cs != Length1)
@@ -165,22 +163,25 @@ case 1:
 
                 break;
 case 2:
+
                 cout << "Dame el numero de confirmacion" << endl;
                 cout << "Dame la clave del vuelo" << endl;
 
 
                 break;
 case 3:
-
+///// Pedir horas y minutos
                 cout << "Dame la hora en la que sale el vuelo" << endl;
                 cin>>h;
                 cout << "Dame los minutos en los que sale el vuelo" << endl;
                 cin>>m;
                 cout<<endl<<endl;
+////// Verificiar que sea una hora valida
                 if(h>=0 && h<=23 && m>=0 && m<=59)
                 {
                    while(i!=Length1)
                    {
+////// Verificar que exista un vuelo con la hora que ingreso el usuario
                        if(h==ArrHora[i].getHora()&& m==ArrHora[i].getMinutos())
                        {
                         cout<<"Vuelo :"<<endl;
