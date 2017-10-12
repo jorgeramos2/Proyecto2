@@ -20,7 +20,7 @@ int main()
 int claveVuelo,claveAeropuerto;
     string linea,destino;
     string Linea1, Linea2, Final1, Final2; //string linea guarda lo que se recibe del archivo, final guarda lo que se imprime en la pantalla final
-    int  Length1 = 0 ,cs = 0, cont=1;
+    int  Length1 = 0 ,cs = 0, cont=1,i=0;
 
 
     //abrir archivos
@@ -33,40 +33,40 @@ int claveVuelo,claveAeropuerto;
     archEnt2.open("Pasajeros.txt");
 
     //obtener lineas de primer archivo
-    
-    
-    
-    
+
+
+
+
     string ciudad;
     string nombre;
     int cclaveAeropuerto;
     int cont2=0;
-    
-    
+
+
     while(archEnt1 >> ciudad >> nombre >> cclaveAeropuerto){
-        
+
         ArrAeropuerto[cont2].setCiudad(ciudad);
         ArrAeropuerto[cont2].setNombre(nombre);
         ArrAeropuerto[cont2].setClaveAeropueto(cclaveAeropuerto);
-        
+
         cont2++;
     }
-    
+
     string nnombre;
     string nacionalidad;
     int numConfirmacion, cont3=0;
-    
+
     do {
         archEnt2 >> numConfirmacion >> nacionalidad;
         getline(archEnt2, nnombre);
-        
+
         ArrPasajeros[cont3].setNumConfirmacion(numConfirmacion);
         ArrPasajeros[cont3].setNacionalidad(nacionalidad);
         ArrPasajeros[cont3].setNombre(nnombre);
     } while (!archEnt2.eof());
-    
-    
-    
+
+
+
 
     bool che= true;
 
@@ -121,16 +121,6 @@ int claveVuelo,claveAeropuerto;
         ArrHora[cs].setHora(h);
         ArrHora[cs].setMinutos(m);
 
-
-        //Vuelo::Vuelo(hora hh, int numAsientos, int clabeVuelo, int claveAeropuerto, string linea, string destino, int listaPasajero[MAX])
-
-        cout <<  ArrVuelos[cs].getclaveVuelo()<<endl;
-        cout<< ArrHora[cs].getHora()<<endl;
-        cout<<ArrHora[cs].getMinutos()<<endl;
-        cout << ArrVuelos[cs].getdestino()<<endl;
-        cout << ArrVuelos[cs].getlinea()<<endl;
-        cout<<ArrVuelos[cs].getnumAsientos()<<endl;
-        cout<<ArrVuelos[cs].getclaveAeropuerto()<<endl;
 
         cs++;
     }while (cs != Length1);
@@ -188,7 +178,22 @@ case 3:
                 cin>>m;
                 if(h>=0 && h<=23 && m>=0 && m<=59)
                 {
-
+                   while(i!=Length1)
+                   {
+                       if(h==ArrHora[i].getHora()&& m==ArrHora[i].getMinutos())
+                       {
+                        cout<<"Vuelo :"<<endl;
+                        cout<<"La clave de vuelo es : "<<ArrVuelos[i].getclaveVuelo()<<endl;
+                        cout<<"El destino del vuelo es : "<<ArrVuelos[i].getdestino()<<endl;
+                        cout<<"La linea del vuelo es : "<<ArrVuelos[i].getlinea()<<endl;
+                        cout<<"El numero de asientos disponibles es : "<<ArrVuelos[i].getnumAsientos()<<endl;
+                        cout<<" La clave del Aeropuerto es : "<<ArrVuelos[i].getclaveAeropuerto()<<endl<<endl<<endl;
+                        i++;
+                       }
+                       else{
+                        i++;
+                       }
+                   }
                 }
                 else
                 {
@@ -215,11 +220,11 @@ break;
 }
 
 }while (opcion !=7);
-    
-    
+
+
     archEnt2.close();
     archEnt1.close();
-    
+
 return 0;
  }
 
