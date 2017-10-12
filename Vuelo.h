@@ -25,12 +25,12 @@ private:
     string linea;
     string destino;
     int listaPasajero [MAX]; //♣	El atributo listaPasajero de la clase Vuelo es un arreglo de 10 elementos, en este arreglo se almacena el numConfirmacion de cada uno de los pasajeros que viajan en ese vuelo.
-
-
+    
+    
 public:
     Vuelo(hora, int, int, int, string, string, int[MAX]); //numero asientos,
     Vuelo();
-
+    
     //mÈtodos de acceso
     hora gethora();
     int getnumAsientos();
@@ -39,7 +39,7 @@ public:
     string getlinea();
     string getdestino();
     int getlistaPasajeros[MAX];
-
+    
     //mÈtodos de modificacion
     void sethora(hora hset);
     void setnumAsientos(int numAsientos);
@@ -48,7 +48,7 @@ public:
     void setLinea(string linea);
     void setDestino(string destino);
     void setlistaPasajero (int listapasajero [MAX]);
-
+    
 };
 
 
@@ -62,18 +62,18 @@ Vuelo:: Vuelo()
     string linea = "sin asignar";
     string destino = "sin asignar";
     //int listaPasajero[MAX] = 0;//aqui me aparece un error, no se como poner el array
-
+    
 }
 Vuelo::Vuelo(hora hh, int numAsientos, int clabeVuelo, int claveAeropuerto, string linea, string destino, int listaPasajero[MAX]){
-
+    
     this->horaSalida=horaSalida;
     this->numAsientos=numAsientos;
     this->claveVuelo=clabeVuelo;
     this->claveAeropuerto=claveAeropuerto;
     this->linea=linea;
     this->destino=destino;
-    this->listaPasajero[MAX]=listaPasajero[MAX]; //aqui me aparece un error, no se como poner el array
-
+    //this->listaPasajero[MAX]=listaPasajero[MAX]; //aqui me aparece un error, no se como poner el array
+    
 }
 
 
