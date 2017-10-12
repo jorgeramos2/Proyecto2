@@ -16,6 +16,7 @@ int main()
     aeropuerto ArrAeropuerto [MAXa];
     pasajero ArrPasajeros [MAXp];
     Vuelo ArrVuelos [MAXv];
+    hora ArrHora[MAXv];
 int claveVuelo,claveAeropuerto;
     string linea,destino;
     string Linea1, Linea2, Final1, Final2; //string linea guarda lo que se recibe del archivo, final guarda lo que se imprime en la pantalla final
@@ -84,16 +85,15 @@ int claveVuelo,claveAeropuerto;
         ArrVuelos[cs].setclaveAeropuerto(claveAeropuerto);
         ArrVuelos[cs].setDestino(destino);
         ArrVuelos[cs].setLinea(linea);
-        h2.setHora(h);
-        h2.setMinutos(m);
-        ArrVuelos[cs].sethora(h2);
+        ArrHora[cs].setHora(h);
+        ArrHora[cs].setMinutos(m);
 
 
         //Vuelo::Vuelo(hora hh, int numAsientos, int clabeVuelo, int claveAeropuerto, string linea, string destino, int listaPasajero[MAX])
 
         cout <<  ArrVuelos[cs].getclaveVuelo()<<endl;
-        cout<< h2.getHora()<<endl;
-        cout<<h2.getMinutos()<<endl;
+        cout<< ArrHora[cs].getHora()<<endl;
+        cout<<ArrHora[cs].getMinutos()<<endl;
         cout << ArrVuelos[cs].getdestino()<<endl;
         cout << ArrVuelos[cs].getlinea()<<endl;
         cout<<ArrVuelos[cs].getnumAsientos()<<endl;
@@ -130,11 +130,11 @@ case 1:
      hora h2;
     cout<<"Vuelo "<<cont<<endl;
     cout<<"La clave de vuelo es : "<<ArrVuelos[cs].getclaveVuelo()<<endl;
-    cout<<"La hora de salida del vuelo es :"<<h2.getHora()<< ":"<<h2.getMinutos()<<endl;
+    cout<<"La hora de salida del vuelo es :"<<ArrHora[cs].getHora()<< ":"<<ArrHora[cs].getMinutos()<<endl;
     cout<<"El destino del vuelo es : "<<ArrVuelos[cs].getdestino()<<endl;
     cout<<"La linea del vuelo es : "<<ArrVuelos[cs].getlinea()<<endl;
     cout<<"El numero de asientos disponibles es : "<<ArrVuelos[cs].getnumAsientos()<<endl;
-    cout<<" La clave del Aeropuerto es : "<<ArrVuelos[cs].getclaveAeropuerto()<<endl;
+    cout<<" La clave del Aeropuerto es : "<<ArrVuelos[cs].getclaveAeropuerto()<<endl<<endl<<endl;
     cs++;
     cont++;
 }
@@ -155,7 +155,7 @@ case 3:
                 cin>>m;
                 if(h>=0 && h<=23 && m>=0 && m<=59)
                 {
-                    cout<<"Correcto";
+
                 }
                 else
                 {
