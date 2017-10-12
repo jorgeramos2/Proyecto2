@@ -97,7 +97,7 @@ int claveVuelo,claveAeropuerto;
         cout << ArrVuelos[cs].getlinea();
 
         cs++;
-    }while (cs >= MAXv-1 | cs <= Length1-1);
+    }while (cs != Length1);
 
     cs=0;
 
@@ -121,11 +121,7 @@ switch (opcion)
 {
 case 1:
 
-                do{
-                    string show= ArrVuelos[ca];
-                    cout << show << endl;
-                    ca++;
-                }while (ca>=MAXv-1 || ca <= Length1);
+
 
 
                 break;
