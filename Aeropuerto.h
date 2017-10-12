@@ -20,6 +20,7 @@ private:
 string ciudad;
 string nombre;
 int claveAeropuerto;
+
 };
 aeropuerto::aeropuerto()
 {

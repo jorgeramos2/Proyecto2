@@ -14,9 +14,10 @@ const int MAXv = 10;
 int main()
 {
     aeropuerto ArrAeropuerto [MAXa];
-    pasajeros ArrPasajeros [MAXp];
+    pasajero ArrPasajeros [MAXp];
     Vuelo ArrVuelos [MAXv];
-
+int claveVuelo,claveAeropuerto;
+    string linea,destino;
     string Linea1, Linea2, Final1, Final2; //string linea guarda lo que se recibe del archivo, final guarda lo que se imprime en la pantalla final
     int C1 = 0, C2=0, Length1 = 0, Length2 = 0, cs = 0;
 
@@ -31,25 +32,7 @@ int main()
     archEnt2.open("Pasajeros.txt");
 
     //obtener lineas de primer archivo
-    do{
 
-        getline(archEnt1 , Linea1); //save the number in the corresponding array
-
-        ArrAeropuerto [C1] = Linea1;
-        C1++;
-
-    } while (!archEnt1.eof()||C1>=MAXa);
-
-    //obtener lineas de segudo archivo
-
-
-    do{
-        getline(archEnt2 , Linea2); //save the number in the corresponding array
-
-        ArrPasajeros [C2] = Linea2;
-        C2++;
-
-    }while (!archEnt2.eof());
 
     bool che= true;
 
@@ -74,30 +57,44 @@ int main()
 
     do{
 
+        hora hh;
         cout << "vuelo no." << cs+1 << endl << "Teclee la hora del vuelo" << endl;
 
         cin >> h;
 
-        hh.setHora(h);
 
         cout << "Teclee los minutos en los que el vuelo sale" << endl;
 
         cin >> m;
-        hh.setMinutos(m);
 
         cout << "Ingrese el numero de asientos" << endl;
 
         cin >> numAsientos;
         cout<<"Teclee clave de vuelo"<<endl;
         cin>>claveVuelo;
-
-
-
+        cout<<"Teclee clave aeropuerto"<<endl;
+        cin>>claveAeropuerto;
+        cout<<"Teclee linea"<<endl;
+        cin>>linea;
+        cout<<"Teclee destino"<<endl;
+        cin>>destino;
+        hora h2;
+        ArrVuelos[cs].setnumAsientos(numAsientos);
+        ArrVuelos[cs].setclaveVuelo(claveVuelo);
+        ArrVuelos[cs].setclaveAeropuerto(claveAeropuerto);
+        ArrVuelos[cs].setDestino(destino);
+        ArrVuelos[cs].setLinea(linea);
+        h2.setHora(h);
+        h2.setMinutos(m);
+        ArrVuelos[cs].sethora(h2);
 
 
         //Vuelo::Vuelo(hora hh, int numAsientos, int clabeVuelo, int claveAeropuerto, string linea, string destino, int listaPasajero[MAX])
 
+        cout <<  ArrVuelos[cs].getclaveVuelo();
 
+        cout << ArrVuelos[cs].getdestino();
+        cout << ArrVuelos[cs].getlinea();
 
         cs++;
     }while (cs >= MAXv-1 | cs <= Length1-1);
