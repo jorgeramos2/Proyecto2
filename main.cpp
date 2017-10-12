@@ -7,7 +7,7 @@
 #include "Pasajero.h"
 
 using namespace std;
-const int MAXa = 5;
+const int MAXa = 6;
 const int MAXp = 15;
 const int MAXv = 10;
 
@@ -16,54 +16,97 @@ int main()
     string ArrAeropuerto [MAXa];
     string ArrPasajeros [MAXp];
     string ArrVuelos [MAXv];
-
+    
     string Linea1, Linea2, Final1, Final2; //string linea guarda lo que se recibe del archivo, final guarda lo que se imprime en la pantalla final
-    int C1 = 0, C2=0, Length1 = 0, Length2 = 0, cs = 0, h,m;
-
-
+    int C1 = 0, C2=0, Length1 = 0, Length2 = 0, cs = 0;
+    
+    
     //abrir archivos
     // abrir arhivo leer info txt uno
     ifstream archEnt1;
     archEnt1.open("Aeropuertos.txt");
-
+    
     //abrir arhivo leer info txt dos
     ifstream archEnt2;
-    archEnt2.open("Aeropuertos.txt");
-
+    archEnt2.open("Pasajeros.txt");
+    
     //obtener lineas de primer archivo
     do{
-
+        
         getline(archEnt1 , Linea1); //save the number in the corresponding array
-
+        
         ArrAeropuerto [C1] = Linea1;
         C1++;
-
-    } while (!archEnt1.eof());
-
+        
+    } while (!archEnt1.eof()||C1>=MAXa);
+    
     //obtener lineas de segudo archivo
-
-
+    
+    
     do{
         getline(archEnt2 , Linea2); //save the number in the corresponding array
-
+        
         ArrPasajeros [C2] = Linea2;
         C2++;
-
+        
     }while (!archEnt2.eof());
-
-   // do{
-
-     //   cout << "Teclee los datos del un vuelo y precione enter" << endl;
-
-       // cin >> ArrVuelos [cs];
-       // cs++;
-    //}while (cs <= MAXv);
-
-   // cs=0;
-
-
+    
+    bool che= true;
+    
+    //cuantos vuelos se van a meter y cuales son
+    while(che==true){
+        cout << "cuantos quiere generar" << endl;
+        cin >> Length1;
+        if (Length1 > 10){
+            cout << "solo se permiten 10 vuelos" << endl;
+            che=true;
+        }
+        else if(Length1<=10){
+            che=false;
+        }
+        
+    }
+    
+    
+    hora arrhora [MAXv];
+    
+    int h, m, numAsientos;
+    
+    do{
+        
+        cout << "vuelo no." << cs+1 << endl << "Teclee la hora del vuelo" << endl;
+        
+        cin >> h;
+        
+        hh.setHora(h);
+        
+        cout << "Teclee los minutos en los que el vuelo sale" << endl;
+        
+        cin >> m;
+        hh.setMinutos(m);
+        
+        cout << "Ingrese el numero de asientos" << endl;
+        
+        cin >> numAsientos;
+        
+        
+        
+        
+        
+        
+        //Vuelo::Vuelo(hora hh, int numAsientos, int clabeVuelo, int claveAeropuerto, string linea, string destino, int listaPasajero[MAX])
+        
+        
+        
+        cs++;
+    }while (cs >= MAXv-1 | cs <= Length1-1);
+    
+    cs=0;
+    
+    int ca = 0;
+    
     int opcion;
-
+    
     do {
         cout << endl
         << " 1 - Consulta de todos los vuelos.\n"
@@ -75,26 +118,26 @@ int main()
         << " 7 - Salir \n"
         << " Ingrese su opcion : ";
         cin >> opcion;
-
-        switch (opcion)
-        {
-            case 1:
-
+        
+switch (opcion)
+{
+case 1:
+                
                 do{
-
-                    cout << ArrVuelos [cs] << endl;
-                    cs++;
-                }while (cs>=MAXv);
-
-
+                    string show= ArrVuelos[ca];
+                    cout << show << endl;
+                    ca++;
+                }while (ca>=MAXv-1 || ca <= Length1);
+                
+                
                 break;
-            case 2:
+case 2:
                 cout << "Dame el numero de confirmacion" << endl;
                 cout << "Dame la clave del vuelo" << endl;
-
-
+                
+                
                 break;
-            case 3:
+case 3:
 
                 cout << "Dame la hora en la que sale el vuelo" << endl;
                 cin>>h;
