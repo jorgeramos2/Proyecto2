@@ -5,9 +5,14 @@
 #include "Aeropuerto.h"
 #include "Vuelo.h"
 #include "Pasajero.h"
-
+/// Este programa maneja las clases aeropuerto,vuelo,pasajero y hora. El progrma puede
+/// consultar todos los vuelos ,dar de alta un pasajero en un vuelo, consulta de vuelo por hora de salida
+/// consulta por clave de vuelo, consulta de vuelos en un aeropuerto,consulta la lista de vuelos en los que viaja un pasajero
+/// Proyecto 2
+/// Jorge Ramos A01176234
+/// 10/13/2017
 using namespace std;
-//// Contantes para los arreglos de objetos
+//// Constantes para los arreglos de objetos
 const int MAXa = 6;
 const int MAXp = 15;
 const int MAXv = 10;
@@ -235,8 +240,10 @@ k=0;
 
 for(j=0;j<=cont2;j++)
 {
+/// Verificar que el aeropuerto exista
  if(ArrAeropuerto[j].getNombre()==nombre)
 {
+/// Desplegar informacion
         cout<<"Vuelo"<<endl;
         cout<<"La clave de vuelo es : "<<ArrVuelos[k].getclaveVuelo()<<endl;
         cout<<"El destino del vuelo es : "<<ArrVuelos[k].getdestino()<<endl;
