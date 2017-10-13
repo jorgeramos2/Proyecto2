@@ -298,7 +298,10 @@ int main()
                     if( )
                     {
                         /// Desplegar informacion
-                        cout<<"Vuelo"<<endl;
+                        
+                        int numvuelo; //poner cuantos vuelos tiene el pasajero
+                        
+                        cout<<"Vuelo no. " << numvuelo <<endl;
                         cout<<"La clave de vuelo es : "<<ArrVuelos[k].getclaveVuelo()<<endl;
                         cout<<"El destino del vuelo es : "<<ArrVuelos[k].getdestino()<<endl;
                         cout<<"La linea del vuelo es : "<<ArrVuelos[k].getlinea()<<endl;
