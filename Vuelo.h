@@ -7,6 +7,7 @@
 //
 
 
+
 const int MAX = 10;
 #ifndef Vuelo_h
 #define Vuelo_h
@@ -25,12 +26,13 @@ private:
     string linea;
     string destino;
     int listaPasajero [MAX]; //♣	El atributo listaPasajero de la clase Vuelo es un arreglo de 10 elementos, en este arreglo se almacena el numConfirmacion de cada uno de los pasajeros que viajan en ese vuelo.
-
-
+    
+    
 public:
     Vuelo(hora, int, int, int, string, string, int[MAX]); //numero asientos,
     Vuelo();
-
+    
+    int cont = 0;
     //mÈtodos de acceso
     hora gethora();
     int getnumAsientos();
@@ -38,8 +40,8 @@ public:
     int getclaveAeropuerto();
     string getlinea();
     string getdestino();
-    int getlistaPasajeros[MAX];
-
+    int getlistaPasajeros();
+    
     //mÈtodos de modificacion
     void sethora(hora hset);
     void setnumAsientos(int numAsientos);
@@ -47,8 +49,8 @@ public:
     void setclaveAeropuerto(int claveAeropuerto);
     void setLinea(string linea);
     void setDestino(string destino);
-    void setlistaPasajero (int listapasajero [MAX]);
-
+    void setlistaPasajero ();
+    
 };
 
 
@@ -57,15 +59,15 @@ Vuelo:: Vuelo()
 {
     hora hh; //hora salida
     int numAsientos = 0;
-    int clabeVuelo= 0;
+    int claveVuelo= 0;
     int claveAeropuerto=0;
     string linea = "sin asignar";
     string destino = "sin asignar";
     //int listaPasajero[MAX] = 0;//aqui me aparece un error, no se como poner el array
-
+    
 }
 Vuelo::Vuelo(hora hh, int numAsientos, int clabeVuelo, int claveAeropuerto, string linea, string destino, int listaPasajero[MAX]){
-
+    
     this->horaSalida=horaSalida;
     this->numAsientos=numAsientos;
     this->claveVuelo=clabeVuelo;
@@ -73,7 +75,7 @@ Vuelo::Vuelo(hora hh, int numAsientos, int clabeVuelo, int claveAeropuerto, stri
     this->linea=linea;
     this->destino=destino;
     //this->listaPasajero[MAX]=listaPasajero[MAX]; //aqui me aparece un error, no se como poner el array
-
+    
 }
 
 
