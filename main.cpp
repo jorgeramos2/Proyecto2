@@ -189,9 +189,8 @@ int main()
                 break;
             case 2:
                 
-                int nn;
                 cout << "Dame el numero de confirmacion" << endl;
-                cin >> nn;
+                
                 
                 
                 cout << "Dame la clave del vuelo" << endl;
@@ -239,39 +238,26 @@ int main()
                 cout << "dame la clave del vuelo" << endl;
                 cin >> clav;
                 
-                for(j=0;j<=cont3;j++)
+                for(j=0;j<=cont2;j++)
                 {
-                    if(ArrPasajeros[km].getNumConfirmacion()==clav){
+                    /// Verificar que el aeropuerto exista
+                    if( )
+                    {
+                        /// Desplegar informacion
+                        cout<<"Vuelo"<<endl;
+                        cout<<"La clave de vuelo es : "<<ArrVuelos[k].getclaveVuelo()<<endl;
+                        cout<<"El destino del vuelo es : "<<ArrVuelos[k].getdestino()<<endl;
+                        cout<<"La linea del vuelo es : "<<ArrVuelos[k].getlinea()<<endl;
+                        cout<<"El numero de asientos disponibles es : "<<ArrVuelos[k].getnumAsientos()<<endl;
+                        cout<<"La hora de salida del vuelo es :"<<ArrHora[k].getHora()<< ":"<<ArrHora[j].getMinutos()<<endl;
+                        cout<<" La clave del Aeropuerto es : "<<ArrVuelos[k].getclaveAeropuerto()<<endl<<endl<<endl;
+                        k++;
                         
-                        for(j=0;j<=cont2;j++)
-                        {
-                            /// Verificar que el aeropuerto exista
-                            if(h==ArrHora[i].getHora()&& m==ArrHora[i].getMinutos() )
-                            {
-                                /// Desplegar informacion
-                                
-                                int numvuelo; //poner cuantos vuelos tiene el pasajero
-                                
-                                cout<<"Vuelo no. " << numvuelo <<endl;
-                                cout<<"La clave de vuelo es : "<<ArrVuelos[k].getclaveVuelo()<<endl;
-                                cout<<"El destino del vuelo es : "<<ArrVuelos[k].getdestino()<<endl;
-                                cout<<"La linea del vuelo es : "<<ArrVuelos[k].getlinea()<<endl;
-                                cout<<"El numero de asientos disponibles es : "<<ArrVuelos[k].getnumAsientos()<<endl;
-                                cout<<"La hora de salida del vuelo es :"<<ArrHora[k].getHora()<< ":"<<ArrHora[j].getMinutos()<<endl;
-                                cout<<" La clave del Aeropuerto es : "<<ArrVuelos[k].getclaveAeropuerto()<<endl<<endl<<endl;
-                                k++;
-                                
-                            }
-                            
-                        }
-                        j=0;
-                    }
-                    else{
-                        
-                        cout << "numero de confirmacion no existe" << endl;
                     }
                     
                 }
+                j=0;
+                
                 
                 break;
                 
@@ -305,42 +291,29 @@ int main()
                 int numconfi;
                 cout << "Ingresar el Numero de Confirmacion del pasajero" << endl;
                 cin >> numconfi;
-                int km=0;
-                //validaciones
-                for(j=0;j<=cont3;j++)
+                
+                for(j=0;j<=cont2;j++)
                 {
-                    if(ArrPasajeros[km].getNumConfirmacion()==numconfi){
+                    /// Verificar que el aeropuerto exista
+                    if( )
+                    {
+                        /// Desplegar informacion
                         
-                        for(j=0;j<=cont2;j++)
-                        {
-                            /// Verificar que el aeropuerto exista
-                            if(h==ArrHora[i].getHora()&& m==ArrHora[i].getMinutos() )
-                            {
-                                /// Desplegar informacion
-                                
-                                int numvuelo; //poner cuantos vuelos tiene el pasajero
-                                
-                                cout<<"Vuelo no. " << numvuelo <<endl;
-                                cout<<"La clave de vuelo es : "<<ArrVuelos[k].getclaveVuelo()<<endl;
-                                cout<<"El destino del vuelo es : "<<ArrVuelos[k].getdestino()<<endl;
-                                cout<<"La linea del vuelo es : "<<ArrVuelos[k].getlinea()<<endl;
-                                cout<<"El numero de asientos disponibles es : "<<ArrVuelos[k].getnumAsientos()<<endl;
-                                cout<<"La hora de salida del vuelo es :"<<ArrHora[k].getHora()<< ":"<<ArrHora[j].getMinutos()<<endl;
-                                cout<<" La clave del Aeropuerto es : "<<ArrVuelos[k].getclaveAeropuerto()<<endl<<endl<<endl;
-                                k++;
-                                
-                            }
-                            
-                        }
-                        j=0;
-                    }
-                    else{
+                        int numvuelo; //poner cuantos vuelos tiene el pasajero
                         
-                        cout << "numero de confirmacion no existe" << endl;
+                        cout<<"Vuelo no. " << numvuelo <<endl;
+                        cout<<"La clave de vuelo es : "<<ArrVuelos[k].getclaveVuelo()<<endl;
+                        cout<<"El destino del vuelo es : "<<ArrVuelos[k].getdestino()<<endl;
+                        cout<<"La linea del vuelo es : "<<ArrVuelos[k].getlinea()<<endl;
+                        cout<<"El numero de asientos disponibles es : "<<ArrVuelos[k].getnumAsientos()<<endl;
+                        cout<<"La hora de salida del vuelo es :"<<ArrHora[k].getHora()<< ":"<<ArrHora[j].getMinutos()<<endl;
+                        cout<<" La clave del Aeropuerto es : "<<ArrVuelos[k].getclaveAeropuerto()<<endl<<endl<<endl;
+                        k++;
+                        
                     }
                     
                 }
-                
+                j=0;
                 
                 
                 
@@ -350,6 +323,7 @@ int main()
                 
                 break;
             case 7:
+                cout << "Hasta luego" << endl;
                 
                 break;
             default:
